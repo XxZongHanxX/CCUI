@@ -1,0 +1,86 @@
+head
+  meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+  link(rel='stylesheet', type='text/css', href='http://localhost:3000/stylesheets/space_announce.css')
+  script.
+    function Question(anchor){
+        var link= 'http://127.0.0.1:3000/question/#' + anchor;
+        window.open(link, 'ExplainWindow', 'resizable=yes, width=450,height=400, scrollbars=yes, resizable=yes');
+    }
+body(background='http://localhost:3000/images/ccu-sbg.jpg')
+center
+  span.title1
+    font(size='36', face='bold')
+      strong 選課系統  - 系統公告
+table(width='100%')
+  tbody
+    tr
+      td(height='1', colspan='2', background='http://localhost:3000/images/dash.jpg')
+p
+center
+  table.font1(border='0', width='75%')
+    tbody
+      tr
+        th(bgcolor='YELLOW', width='80%')
+          | 標題:
+          font(color='RED', size='4', face='標楷體') 109學年度第2學期第一階段選課(109/12/25～12/31)系統開放關閉時間
+        th(bgcolor='YELLOW') 公告日期: 2020/12/10
+          a(href="javascript:Question('DATETIME')")
+            font(color='BLUE') [?]
+      tr
+        td(colspan='2')
+          font(color='green', size='4', face='標楷體')
+            | 第一階段選課日期：109年12月25日（星期五）至12月31日（星期四）止
+            br
+            font(color='blue', size='5', face='標楷體')
+              | 系統開放時間如下：
+              br
+              font(color='RED', size='4', face='標楷體')
+                br
+                font(color='gray')
+                  br
+                  br
+                  |1.12/25(五)12:00開始選課，12/28(一)8:00系統關閉後進行第一梯次篩選。
+                  br
+                  font(color='gray')
+                    br
+                    br
+                    |2.12/29(二)12:00開始選課，12/30(三)8:00系統關閉後進行第二梯次篩選。
+                    br
+                    font(color='gray')
+                      br
+                      br
+                      |3.12/30(三)12:00開始選課，12/31(四)22:00系統關閉後進行第三梯次篩選。
+                      br
+                      font(color='gray')
+                        br
+                        br
+                        font(color='black')
+                          |若要查詢自己曾修過之課程，可至教務系統（http://kiki.ccu.edu.tw/）點選：成績查詢輸入學號及密碼即可查得個人之歷年修課紀錄，以為安排修課之參考，避免重覆選修相同課程。
+                          br
+                          font(color='blue', size='5', face='標楷體')
+                            |選課確認：
+                            br
+                            font(color='red', size='4', face='標楷體')
+                              |選課完成後，請確認所選取之課程，在科目標記欄須顯示出「旗子」時，暫時允許選上，惟仍須經過下列篩選。有限制修課人數之科目，於選課關閉期間執行系統篩選。有先修條件之科目，於本學期成績登錄截止後開始執行系統篩選，不符合先修(科碼)條件之課程，將由系統篩退。
+                              br
+                              font(color='black')
+                                |請同學於加退選期間至選課系統「檢視已選修科目」再次確認。
+                                br
+                                font(color='blue', size='5', face='標楷體')
+                                  |修習學分下限：
+                                  br
+                                  font(color='red', size='4', face='標楷體')
+                                    |大學部修課學分下限規定：第一學年至第三學年每學期為16學分，第四學年每學期為8學分；延修生至少選一科一學分以上課程。
+                                    br
+                                    font(color='green')
+                                      |碩士班（一般生）修課學分下限規定：第一學年每學期為6學分；第二學年第一學期為2學分、第二學期由各系所自訂。
+                                      br
+                                      |碩士班（在職生）修課學分下限規定：第一學年每學期為3學分；第二學年第一學期為2學分、第二學期由各系所自訂。
+                                      br
+                                      font(color='blue')
+                                        |博士班（一般生）修課學分下限規定：第一學年每學期為6學分；第二學年每學期為3學分。
+                                        br
+                                        |博士班（在職生）修課學分下限規定：第一學年每學期為3學分；第二學年第一學期為2學分、第二學期由各系所自訂。
+                                        br
+                                        font(color='red')
+                                          |如修習學分數欲低於上述下限，請於開學後下載短修單填寫經系所蓋章後，再送教學組始完成程序

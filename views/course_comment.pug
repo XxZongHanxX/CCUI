@@ -1,0 +1,165 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description', content='')
+  meta(name='author', content='')
+  title 國立中正大學  選課系統  課程評論
+  link(href='../assets2/css/styles.css', rel='stylesheet')
+  link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css")
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js', crossorigin='anonymous')
+  link(rel='shortcut icon', href='../assets/ico/favicon.png')
+  link(rel='apple-touch-icon-precomposed', sizes='144x144', href='../assets/ico/apple-touch-icon-144-precomposed.png')
+  link(rel='apple-touch-icon-precomposed', sizes='114x114', href='../assets/ico/apple-touch-icon-114-precomposed.png')
+  link(rel='apple-touch-icon-precomposed', sizes='72x72', href='../assets/ico/apple-touch-icon-72-precomposed.png')
+  link(rel='apple-touch-icon-precomposed', href='../assets/ico/apple-touch-icon-57-precomposed.png')
+  style.
+    body{
+    background-image: url('../images/ccu_background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    }
+nav.sb-topnav.navbar.navbar-expand.navbar-dark.bg-dark
+  a.navbar-brand(href='../loginSuccess/') 國立中正大學  選課系統
+  button#sidebarToggle.btn.btn-link.btn-sm.order-1.order-lg-0(href='#')
+    i.fas.fa-bars
+  // Navbar
+  ul.navbar-nav.ml-auto.ml-md-0
+    li.nav-item.dropdown
+      a#userDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+        i.fas.fa-user.fa-fw 
+        |#{user.Student_Name}
+      .dropdown-menu.dropdown-menu-right(aria-labelledby='userDropdown')
+        a.dropdown-item(href='#') 設定
+        .dropdown-divider
+        a.dropdown-item(href='../logout') 登出
+  font(color='white') #{user.Student_ID}
+#layoutSidenav
+  #layoutSidenav_nav
+    nav#sidenavAccordion.sb-sidenav.accordion.sb-sidenav-dark
+      .sb-sidenav-menu
+        .nav
+          .sb-sidenav-menu-heading 選課系統公告
+          a.nav-link(href='../loginSuccess/')
+            .sb-nav-link-icon
+              i.bi.bi-megaphone
+            |系統公告
+          .sb-sidenav-menu-heading 選課系統相關
+          a.nav-link(href='../additional_selection/')
+            .sb-nav-link-icon
+              i.bi.bi-file-earmark-plus
+            |加選
+          a.nav-link(href='../advanced_course/')
+            .sb-nav-link-icon
+              i.bi.bi-file-earmark-plus-fill
+            |進階加選
+          a.nav-link(href='../withdraw/')
+            .sb-nav-link-icon
+              i.bi.bi-file-earmark-minus
+            |退選
+          a.nav-link(href='../curriculum/')
+            .sb-nav-link-icon
+              i.bi.bi-calendar2-check-fill
+            |檢視以選修科目
+          a.nav-link(href='../change_password/')
+            .sb-nav-link-icon
+              i.bi.bi-lock
+            |更改密碼
+          .sb-sidenav-menu-heading 資料查詢
+          a.nav-link(href='../course_information/')
+            .sb-nav-link-icon
+              i.bi.bi-stickies-fill
+            |查詢開課資料
+          a.nav-link(href='../advanced_course_information/')
+            .sb-nav-link-icon
+              i.bi.bi-stickies
+            |進階開課資料查詢
+          .sb-sidenav-menu-heading 問題與表單
+          a.nav-link(href='../general_question/')
+            .sb-nav-link-icon
+              i.bi.bi-question-circle-fill
+            |一般問題
+          a.nav-link(href='../images/system_operate.docx')
+            .sb-nav-link-icon
+              i.bi.bi-file-earmark-text-fill
+            |系統操作手冊
+          a.nav-link(href='../images/ccu_timetable.doc')
+            .sb-nav-link-icon
+              i.bi.bi-file-earmark-text
+            |課表doc檔
+          .sb-sidenav-menu-heading 選課輔助
+          a.nav-link(href='../course_comment/')
+            .sb-nav-link-icon
+              i.bi.bi-chat-text-fill
+            |課程討論
+  #layoutSidenav_content
+    main
+      .container-fluid
+        h1.mt-4 課程評論
+        hr
+        form(name='form1' action='/next_course_comment' method='POST')
+          table 
+            tbody 
+              tr
+                td
+                  input(type='checkbox' name='all_department' id='all_department' value='all_department')
+                  label(for='all')
+                  font(size=2) 選擇所有學系
+                td
+                  font(size=2) 科目名稱:&nbsp;
+                  input(type='text' name='subject' id='subject')
+              p
+              tr 
+                td
+                  font(size=2) 請選擇學院
+                  select(name='academy' id='academy' onChange="javascript:renew(this.selectedIndex)")
+                    option(value="請選擇學院") 
+                      font(size=2) 請選擇學院
+                    - for(var i=0;i<academy.length;i++)
+                      option(value=academy[i]) 
+                        font(size=2) #{academy[i]}
+                td
+                  font(size=2) 教師姓名:&nbsp;
+                  input(type='text' name='teacher' id='teacher') 
+              p 
+              tr
+                td
+                  font(size=2) 請選擇系所
+                  select(name='department' id='department')
+                    option(value="") 請由左方選取學院
+          p
+          input(type='submit' value='送出查詢') 
+        hr
+        -for(var i=0;i<row.length&&i<8;i++)
+          div(style="width:80%;box-shadow: 8px 5px 5px #444;padding: 8px 12px;margin:auto;")
+            div(style="float:left;")
+              p #{row[i].Course_Department}&nbsp;-&nbsp;#{row[i].Course_Name}&nbsp;·&nbsp;#{row[i].Comment_Name}
+            div(style="float:right;")
+              p 受評教授：#{row[i].Course_Teacher}&nbsp;·&nbsp;#{row[i].Comment_Time}
+            div(style="clear:both;")
+              hr
+              p #{row[i].Comment_Text}
+          p
+        
+script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js', crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js', crossorigin='anonymous')
+script(src='../assets2/js/scripts.js')
+script.
+  function renew(index){
+    x = new Array();
+    x[0] = ["請選擇學院"]
+    x[1] = "#{literature}".split(",");
+    x[2] = "#{science}".split(",");
+    x[3] = "#{society}".split(",");
+    x[4] = "#{engineering}".split(",");
+    x[5] = "#{management}".split(",");
+    x[6] = "#{law}".split(",");
+    x[7] = "#{education}".split(",");
+    x[8] = "#{other}".split(",");
+    console.log(x[0])
+    for(var i=0;i<x[index].length;i++)
+        document.form1.department.options[i]=new Option(x[index][i], x[index][i]);
+    document.form1.department.length=x[index].length;
+  }

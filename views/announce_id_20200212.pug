@@ -1,0 +1,44 @@
+head
+  meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+  link(rel='stylesheet', type='text/css', href='http://localhost:3000/stylesheets/space_announce.css')
+  script.
+    function Question(anchor){
+        var link= 'http://127.0.0.1:3000/question/#' + anchor;
+        window.open(link, 'ExplainWindow', 'resizable=yes, width=450,height=400, scrollbars=yes, resizable=yes');
+    }
+body(background='http://localhost:3000/images/ccu-sbg.jpg')
+center
+  span.title1
+    font(size='36', face='bold')
+      strong 選課系統  - 系統公告
+table(width='100%')
+  tbody
+    tr
+      td(height='1', colspan='2', background='http://localhost:3000/images/dash.jpg')
+p
+center
+  table.font1(border='0', width='75%')
+    tbody
+      tr
+        th(bgcolor='YELLOW', width='80%')
+          |標題:
+          font(color='RED', size='4', face='標楷體') 臺灣綜合大學系統(成大、中山、中興、中正)跨校選課相關訊息(106學年修訂)
+        th(bgcolor='YELLOW') 公告日期: 2020/02/12
+          a(href="javascript:Question('DATETIME')")
+            font(color='BLUE') [?]
+      tr
+        td(colspan='2')
+          font(color='blue', size='4', face='標楷體')
+            |1.因校際合作，本校
+            font(color='RED')
+              |學士班學生
+              font(color='blue')
+                |至成功大學、中山大學、中興大學修課免收學分費(重修、延修、教育學程、專班課程除外)。
+                br
+                font(color='RED')
+                  |2.研究生應依各校學分費標準繳交該校學分費。
+                  br
+                  font(color='blue')
+                    |3.辦理程序與一般校際選課相同，請先辦妥校內手續，再至外校申請。
+                    br
+                    font 4.校際選課辦法及表單請至教務處網頁之相關法規及表單下載處查詢下載。

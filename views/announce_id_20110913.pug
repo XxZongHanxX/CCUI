@@ -1,0 +1,31 @@
+head
+  meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+  link(rel='stylesheet', type='text/css', href='http://localhost:3000/stylesheets/space_announce.css')
+  script.
+    function Question(anchor){
+        var link= 'http://127.0.0.1:3000/question/#' + anchor;
+        window.open(link, 'ExplainWindow', 'resizable=yes, width=450,height=400, scrollbars=yes, resizable=yes');
+    }
+body(background='http://localhost:3000/images/ccu-sbg.jpg')
+center
+  span.title1
+    font(size='36', face='bold')
+      strong 選課系統  - 系統公告
+table(width='100%')
+  tbody
+    tr
+      td(height='1', colspan='2', background='http://localhost:3000/images/dash.jpg')
+p
+center
+  table.font1(border='0', width='75%')
+    tbody
+      tr
+        th(bgcolor='YELLOW', width='80%') 標題: [新增功能]線上加簽申請
+        th(bgcolor='YELLOW') 公告日期: 2011/09/13
+          a(href="javascript:Question('DATETIME')")
+            font(color='BLUE') [?]
+      tr
+        td(colspan='2')
+          |即日起新增線上加簽申請功能，詳見
+          a(href='http://140.123.30.101/~ccmisp06/UserGuide/concent_form_help.html') 說明網頁
+          |。
