@@ -6,7 +6,9 @@ https://youtu.be/PucR9kyRBwM
 
 簡介:
 實作目的:
+
 (1.)新增多樣的功能像是進階加選、課程評論
+
 (2.)新增新的介面選擇製作RWD
 介面架構:
 ![image](https://user-images.githubusercontent.com/58058632/165676472-e4fc85c4-0ec0-49d6-ad91-2cc24ef86680.png)
